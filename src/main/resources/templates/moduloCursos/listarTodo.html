@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Listar de Cursos</title>
+</head>
+<body>
+<div align="center">
+    <h1>Cursos</h1>
+    <a th:href="@{/cursos/nuevo}">Crear un nuevo curso</a>
+    <table border="4" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Docente</th>
+            <th>Temacion</th>
+            <th>Img</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="curso : ${listaCursos}">
+            <td th:text="${curso.idCurso}">Id</td>
+            <td th:text="${curso.nombre}">Nombre</td>
+            <td th:text="${curso.codcurso}">Codigo</td>
+            <td th:text="${curso.descripcion}">Descripcion</td>
+            <td th:text="${curso.docente}">Docente</td>
+            <td th:text="${curso.temario}">Temario</td>
+            <td th:text="${curso.img}">Img</td>
+            <td><a th:href="@{/cursos/actualizar/{id}(id=${curso.idCurso})}">Actualizar</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{/cursos/eliminar/{id}(id=${curso.idCurso})}">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Listar de Cursos</title>
+</head>
+<body>
+<div align="center">
+  <h1>Editar Curso</h1>
+  <br />
+  <form action="#" th:action="@{/cursos/guardar}" th:object="${curso}" method="post">
+    <table border="0" cellpadding="10">
+      <tr>
+        <td>ID del Curso:</td>
+        <td><input type="text" th:field="*{idCurso}" readonly="readonly" />
+        </td>
+      </tr>
+      <tr>
+        <td>Nombre:</td>
+        <td><input type="text" th:field="*{nombre}" /></td>
+      </tr>
+      <tr>
+        <td>Codigo del curso:</td>
+        <td><input type="text" th:field="*{codcurso}" /></td>
+      </tr>
+      <tr>
+        <td>Descripcion:</td>
+        <td><input type="text" th:field="*{descripcion}" /></td>
+      </tr>
+      <tr>
+        <td>Docente:</td>
+        <td><input type="text" th:field="*{docente}" /></td>
+      </tr>
+      <tr>
+        <td>Temario:</td>
+        <td><input type="text" th:field="*{temario}" /></td>
+      </tr>
+      <tr>
+        <td>Imagen:</td>
+        <td><input type="text" th:field="*{img}" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit">Save</button></td>
+      </tr>
+    </table>
+  </form>
+
+</div>
+
+</body>
+</html>
