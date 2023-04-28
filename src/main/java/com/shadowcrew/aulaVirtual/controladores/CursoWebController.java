@@ -3,6 +3,8 @@ package com.shadowcrew.aulaVirtual.controladores;
 import com.shadowcrew.aulaVirtual.modelo.Curso;
 import com.shadowcrew.aulaVirtual.servicios.CursosServicios;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,12 +24,14 @@ public class CursoWebController {
 
 
     @RequestMapping("/listarTodo")
+    //public ResponseEntity<Object> listarCursos(Model model){
     public String listarCursos (Model model) {
 
         List <Curso> listaCursos = servicio.buscarTodo();
         System.out.println("Lista de cursos disponibles : " + listaCursos);
+        //return new Response<>(listaCursos, HttpStatus.OK);
         model.addAttribute("listaCursos", listaCursos);
-        return "/moduloCursos/listarTodo";
+       return "/moduloCursos/listarTodo";
 
     }
 
